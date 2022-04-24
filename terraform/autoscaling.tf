@@ -22,4 +22,9 @@ resource "aws_autoscaling_group" "failure_analysis_ecs_asg" {
   max_size                  = 10
   health_check_grace_period = 300
   health_check_type         = "EC2"
+  tag {
+    key                 = "Name"
+    value               = "ECS"
+    propagate_at_launch = "true"
+  }
 }
