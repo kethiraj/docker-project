@@ -29,15 +29,15 @@ resource "aws_alb_listener" "front_end" {
   load_balancer_arn = aws_alb.main.id
   port              = 443
   protocol          = "HTTPS"
-  ssl_policy = "ELBSecurityPolicy-FS-1-2-Res-2020-10"
-  certificate_arn = "arn:aws:acm:ap-south-1:624547490816:certificate/dfc04f0a-2d1e-41e6-80ce-c02bf87d2d07"
+  #ssl_policy = "ELBSecurityPolicy-FS-1-2-Res-2020-10"
+  #certificate_arn = "arn:aws:acm:ap-south-1:624547490816:certificate/dfc04f0a-2d1e-41e6-80ce-c02bf87d2d07"
 
   default_action {
     target_group_arn = aws_alb_target_group.app.id
     type             = "forward"
   }
 }
-
+/*
 resource "aws_route53_record" "terraform" {
   zone_id = data.aws_route53_zone.zone.zone_id
   name    = "devopsethiraj.tech"
@@ -52,3 +52,4 @@ resource "aws_route53_record" "terraform" {
 data "aws_route53_zone" "zone" {
   name = "devopsethiraj.tech"
 }
+*/
