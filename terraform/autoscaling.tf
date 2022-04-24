@@ -9,11 +9,7 @@ resource "aws_launch_configuration" "ecs_launch_config" {
   echo ECS_INSTANCE_ATTRIBUTES={\"purchase-option\":\"ondemand\"} >> /etc/ecs/ecs.config
   EOF
   iam_instance_profile = aws_iam_instance_profile.ec2_iam_instance_profile.arn
-  tags = {
-    Name = "ECS"
-  }
-  
-
+ 
 }
 
 resource "aws_autoscaling_group" "failure_analysis_ecs_asg" {
