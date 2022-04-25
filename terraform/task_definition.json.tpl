@@ -4,7 +4,7 @@
         "memory": 256,
         "name": "worker",
         "cpu": 256,
-        "image": "ethiraj3390/docker:latest",
+        "image": "kheralalit/rearc:latest",
         "portMappings": [
          {
            "containerPort": 3000,
